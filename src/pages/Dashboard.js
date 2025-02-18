@@ -13,7 +13,7 @@ const Dashboard = () => {
   return (
     <Box>
       <Header />
-      <Box p={3}>
+      <Box p={3} marginRight={4}>
         <Counter />
 
         {/* Flexbox Layout: Side by Side on Large Screens, Vertical on Small Screens */}
