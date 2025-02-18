@@ -13,27 +13,25 @@ const Dashboard = () => {
   return (
     <Box>
       <Header />
-        <Box p={3}>
-            <Box sx={{ mr: 3 }}> {/* Add margin-right here */}
-                <Counter />
-            </Box>
+      <Box p={3}>
+        <Counter />
 
-            {/* Flexbox Layout: Side by Side on Large Screens, Vertical on Small Screens */}
-            <Box
-                sx={{
-                display: "flex",
-                flexDirection: isLargeScreen ? "row" : "column",
-                gap: 3,
-                }}
-            >
-                <Box sx={{ flex: 1, minWidth: "50%" }}> 
-                    <UserDataForm />
-                </Box>
-                <Box sx={{ flex: 1, minWidth: "50%" }}> 
-                    <RichTextEditor />
-                </Box>
-            </Box>
+        {/* Flexbox Layout: Side by Side on Large Screens, Vertical on Small Screens */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: isLargeScreen ? "row" : "column",
+            gap: 3,
+          }}
+        >
+          <Box sx={{ flex: 1, minWidth: "50%" }}> 
+            <UserDataForm />
+          </Box>
+          <Box sx={{ flex: 1, minWidth: "50%" }}> 
+            <RichTextEditor />
+          </Box>
         </Box>
+      </Box>
     </Box>
   );
 };
