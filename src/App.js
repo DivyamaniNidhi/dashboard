@@ -1,31 +1,25 @@
-import React from 'react';
-import Counter from './components/Counter';
-import UserDataForm from './components/UserDataForm';
-import RichTextEditor from './components/RichTextEditor';
-import { Box } from '@mui/material';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Welcome from "./pages/Welcome";
+import ProtectedRoute from "./components/ProtectedRoute";
 
-function App() {
+const App = () => {
   return (
-    <div className="App" style={{ margin: '1rem' }}>
-      <Counter />
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: { xs: 'column', md: 'row' }, // Column on small screens, row on large
-          gap: 2,
-          mt: 4,
-          alignItems: 'stretch',
-        }}
-      >
-        <Box sx={{ flex: 1 }}>  {/* Ensures both cards take equal space */}
-          <UserDataForm />
-        </Box>
-        <Box sx={{ flex: 1 }}>  {/* Ensures both cards take equal space */}
-          <RichTextEditor />
-        </Box>
-      </Box>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route
+          path="/app"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
