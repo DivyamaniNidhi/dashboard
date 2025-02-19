@@ -1,6 +1,5 @@
 # App Description
-
-This is a React-based dashboard application that includes Firebase authentication and a rich text editor.
+This is a React-based dashboard application that includes Firebase authentication, counter, user data form, rich text editor and local storage support. The app is fully responsive and adapts to different screen sizes.
 
 ## Features
 - User authentication with Firebase
